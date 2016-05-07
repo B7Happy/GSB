@@ -1,0 +1,103 @@
+
+{% extends "::base0.html.twig"%}
+
+{% block stylesheets %}
+
+
+
+  <link href="{{ asset('css/signin.css') }}" rel="stylesheet">
+
+  {% endblock %}
+
+{% block body %}
+
+<h2 class="page-header"> Panier </h2>
+
+
+<table class="table table-hover">
+<thead>
+   <tr>
+       <th>Nom </th>
+       <th> choix du Quantité</th>
+       <th>Quantité </th>
+       <th>Prix</th>
+       <th>Total HT</th>
+
+   </tr>
+</thead>
+<tdody>
+{% if Medicament|length == 0 %}
+<tr>
+  <td> Aucun articles dans votre panier </td>
+  </tr>
+  {% endif %}
+
+{% for Medicament in Medicament %}
+   <tr>
+
+
+       <td>{{ Medicament.Nom}}</td>
+       <td>
+
+       <select name="qte" id="mySelect" onchange="func()  " >
+  <script>
+function func() {
+    var x = document.getElementById("mySelect").value;
+    document.getElementById("qte").innerHTML = ""+x;
+
+}
+</script>
+{% set i = "" %}
+       {% for i  in 1..10 %}
+
+       <option value="{{i}}" >   {{i}}  </option>
+        {% endfor %}
+       {% set qte = i %}
+
+       </select>
+       </td>
+ {% set qte = 1%}
+       <td id ="qte"> {{qte}} </td>>
+
+       <td>{{ Medicament.prix}} </td>
+
+
+       <td>{{ Medicament.prix * qte}} </td>
+       <td>
+
+ {#<a href="{{path('prep')}}"   class="btn btn-primary"> Acheter  </a> #}
+ <a href="{{path('span', { 'id' : Medicament.id})}}"   class="btn btn-danger"> Sup  </a>
+</td>
+
+
+</tr>
+
+</tbody>
+</table>
+{% set totalHT = "" %}
+{% set tva = "" %}
+{% set total= "" %}
+{% set totalHT = totalHT + (Medicament.prix * qte)%}
+{% set tva = totalHT * (20/100) %}
+{% set total= totalHT + tva %}
+
+<d1 class="d3-horizontal ">
+<dt> Total HT :  </dt>
+<dd> {{totalHT}} </dd>
+
+<dt> Tva 20 % : </dt>
+<dd> {{tva}} </dd>
+
+<dt> Total : </dt>
+<dd> {{total}} </dd>
+
+</br>
+
+ <a href="{{path('liv')}}"   class="btn btn-primary"> Confirmer  </a>
+
+
+
+{% endfor %}
+
+
+  {% endblock %}

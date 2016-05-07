@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+
+        {% block stylesheets %}{% endblock %}
+
+    </head>
+    <body>
+      
+
+
+        {% block body %}{% endblock %}
+
+
+
+
+
+        <script src="{{ asset("https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js") }}"> </script>
+        <script src="{{ asset('js/bootstrap.min.js')}}"></script>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

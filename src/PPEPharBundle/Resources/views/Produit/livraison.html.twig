@@ -1,0 +1,75 @@
+
+{% extends "::base0.html.twig"%}
+
+{% block stylesheets %}
+
+
+
+
+
+  {% endblock %}
+
+{% block body %}
+
+<h2 class="page-header"> Livraison </h2>
+</br>
+
+<h3>  Adresse de livraison  :</h3>
+</br>
+<form>
+  <div class="form-group">
+    <label >Prenom</label>
+    <input  class="form-control" placeholder="">
+  </div>
+  <div class="form-group">
+    <label >Nom</label>
+    <input type="" class="form-control" >
+  </div>
+  <div class="form-group">
+    <label >adresse</label>
+    <input type=""text"" class="form-control" >
+  </div>
+  <div class="form-group">
+    <label >code postal</label>
+    <input type="number" class="form-control" >
+  </div>
+  <div class="form-group">
+    <label >Ville</label>
+    <input type=""text"" class="form-control" >
+  </div>
+  <div class="form-group">
+    <label >Pays</label>
+    <input type="text" class="form-control" placeholder="France" >
+  </div>
+
+
+
+ <a href="{{path('panier') }}"   class="btn btn-danger"> Annuler  </a> <a href="{{path('payer') }}"   class="btn btn-primary"> confirme </a>
+</form>
+
+{#
+
+{% for client in client %}
+
+  <h4>  Adresse de livraison </h4>
+
+    <p>   {{ Client.prenom}} {{ Client.nom}} </p>
+    <p>    {{Client.adresse}}, {{Client.codePostal}} - {{Client.ville}} </p>
+    <p> France </p>
+
+</br>
+
+
+
+<a href="{{path('produit')}}"  class="btn btn-primary"> Valider mes adresses </a>
+
+{% endif %}
+
+
+{% endfor %}
+#}
+
+
+
+
+  {% endblock %}

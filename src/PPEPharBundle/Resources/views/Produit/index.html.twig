@@ -1,0 +1,58 @@
+
+{% extends "::base0.html.twig"%}
+
+{% block stylesheets %}
+
+
+
+  <link href="{{ asset('css/signin.css') }}" rel="stylesheet">
+
+  {% endblock %}
+
+{% block body %}
+
+<h2 class="page-header"> Les Medicaments </h2>
+
+
+<table class="table table-hover">
+<thead>
+   <tr>
+       <th>Type </th>
+       <th>Nom</th>
+       <th>Effet</th>
+       <th>precaution</th>
+       <th> quantite </th>
+       <th>Prix</th>
+       <th>  </th>
+   </tr>
+</thead>
+<tdody>
+{% for Medicament in Medicament %}
+   <tr>
+
+       <td scope="row">{{ Medicament.Type}}</td>
+       <td>{{ Medicament.Nom}}</td>
+       <td>{{ Medicament.effet}}</td>
+       <td>{{ Medicament.precaution}}</td>
+      {# <form action "{{path('apanier', { 'id' : Medicament.id}) }}" method="get">
+       <select name="qte" >
+       {% for i in 1..10 %}
+       <option value="{{i}}"> {{i}}</option>
+       {% endfor %}
+       </select>  #}
+       <td>{{ Medicament.prix}}</td>
+       <td>
+
+<a href="{{path('apanier', { 'id' : Medicament.id}) }}"   class="btn btn-primary"> Acheter  </a>
+</form>
+</td>
+
+
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+
+
+{% endblock %}

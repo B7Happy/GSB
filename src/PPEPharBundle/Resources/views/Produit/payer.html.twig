@@ -1,0 +1,49 @@
+
+{% extends "::base0.html.twig"%}
+
+{% block stylesheets %}
+
+
+
+
+
+  {% endblock %}
+
+{% block body %}
+
+
+
+
+
+<h2 class="page-header"> Paiement </h2>
+</br>
+
+
+
+<form>
+  <div class="form-group">
+    <label >Numero de carte :</label>
+    <input  class="form-control" placeholder="">
+  </div>
+  <div class="form-group">
+    <label >Date d'experiation :</label>
+    <input type="date" class="form-control" >
+  </div>
+  <div class="form-group">
+    <label >Grytogramme visuel</label>
+    <input type="number" class="form-control" >
+  </div>
+  <div class="form-group">
+    <label >Nom</label>
+    <input type="text" class="form-control" >
+  </div>
+
+
+
+
+         <a href="{{path('liv') }}"   class="btn btn-danger"> Annuler  </a>       <a href="{{path('confirmer') }}"   class="btn btn-primary"> Confirmer  </a>
+</form>
+
+
+
+  {% endblock %}

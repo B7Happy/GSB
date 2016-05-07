@@ -1,0 +1,15 @@
+services:
+
+#test:
+#    class: PPEPharBundle\Services\test
+#    argument: [@security.context, @doctrine.orm.entity_manager]
+
+#    ppe_phar.example:
+#        class: PPEPharBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
+
+#  testListener:
+#    class: PPEPharBundle\Example
+#    arguments: [@service_container,@session]
+#    tags:
+#            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }

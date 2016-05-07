@@ -1,0 +1,20 @@
+{% extends "::base0.html.twig"%}
+
+{% block stylesheets %}
+
+
+
+  <link href="{{ asset('css/signin.css') }}" rel="stylesheet">
+
+  {% endblock %}
+
+{% block body %}
+
+<h3> Ajoute au panier </h3>
+
+<img src="{{ asset('panier.jpg') }}" alt="panier" class="img-rounded" height="300" width="300">
+
+<a href="{{path('produit')}}"  class="btn btn-primary"> Continuer mes achats</a>
+<a href="{{path('panier')}}"  class="btn btn-primary"> Passer la commande </a>
+
+  {% endblock %}

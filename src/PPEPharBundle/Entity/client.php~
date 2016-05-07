@@ -1,0 +1,505 @@
+<?php
+
+namespace PPEPharBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * client
+ *
+ * @ORM\Table(name="client")
+ * @ORM\Entity(repositoryClass="PPEPharBundle\Repository\clientRepository")
+ */
+class client
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="identifiant", type="string", length=255)
+     */
+    private $identifiant;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mp", type="string", length=255)
+     */
+    private $mp;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=255)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="string", length=255)
+     */
+    private $prenom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse", type="string", length=255)
+     */
+    private $adresse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="codePostal", type="string", length=255)
+     */
+    private $codePostal;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ville", type="string", length=255)
+     */
+    private $ville;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="telephone", type="string", length=255)
+     */
+    private $telephone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="idCompteur", type="string", length=255)
+     */
+    private $idCompteur;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ancienReleve", type="decimal", precision=10, scale=0)
+     */
+    private $ancienReleve;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateDernierReleve", type="date")
+     */
+    private $dateDernierReleve;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dernierReleve", type="decimal", precision=10, scale=0)
+     */
+    private $dernierReleve;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dateAncienReleve", type="date")
+     */
+    private $dateAncienReleve;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="signatureBase64", type="text")
+     */
+    private $signatureBase64;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="situation", type="integer")
+     */
+    private $situation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="idcontroleur", type="string", length=255)
+     */
+    private $idcontroleur;
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set identifiant
+     *
+     * @param string $identifiant
+     *
+     * @return client
+     */
+    public function setIdentifiant($identifiant)
+    {
+        $this->identifiant = $identifiant;
+
+        return $this;
+    }
+
+    /**
+     * Get identifiant
+     *
+     * @return string
+     */
+    public function getIdentifiant()
+    {
+        return $this->identifiant;
+    }
+
+    /**
+     * Set mp
+     *
+     * @param string $mp
+     *
+     * @return client
+     */
+    public function setMp($mp)
+    {
+        $this->mp = $mp;
+
+        return $this;
+    }
+
+    /**
+     * Get mp
+     *
+     * @return string
+     */
+    public function getMp()
+    {
+        return $this->mp;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     *
+     * @return client
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Set prenom
+     *
+     * @param string $prenom
+     *
+     * @return client
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    /**
+     * Get prenom
+     *
+     * @return string
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * Set adresse
+     *
+     * @param string $adresse
+     *
+     * @return client
+     */
+    public function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    /**
+     * Get adresse
+     *
+     * @return string
+     */
+    public function getAdresse()
+    {
+        return $this->adresse;
+    }
+
+    /**
+     * Set codePostal
+     *
+     * @param string $codePostal
+     *
+     * @return client
+     */
+    public function setCodePostal($codePostal)
+    {
+        $this->codePostal = $codePostal;
+
+        return $this;
+    }
+
+    /**
+     * Get codePostal
+     *
+     * @return string
+     */
+    public function getCodePostal()
+    {
+        return $this->codePostal;
+    }
+
+    /**
+     * Set ville
+     *
+     * @param string $ville
+     *
+     * @return client
+     */
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
+
+        return $this;
+    }
+
+    /**
+     * Get ville
+     *
+     * @return string
+     */
+    public function getVille()
+    {
+        return $this->ville;
+    }
+
+    /**
+     * Set telephone
+     *
+     * @param string $telephone
+     *
+     * @return client
+     */
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    /**
+     * Get telephone
+     *
+     * @return string
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
+    }
+
+    /**
+     * Set idCompteur
+     *
+     * @param string $idCompteur
+     *
+     * @return client
+     */
+    public function setIdCompteur($idCompteur)
+    {
+        $this->idCompteur = $idCompteur;
+
+        return $this;
+    }
+
+    /**
+     * Get idCompteur
+     *
+     * @return string
+     */
+    public function getIdCompteur()
+    {
+        return $this->idCompteur;
+    }
+
+    /**
+     * Set ancienReleve
+     *
+     * @param string $ancienReleve
+     *
+     * @return client
+     */
+    public function setAncienReleve($ancienReleve)
+    {
+        $this->ancienReleve = $ancienReleve;
+
+        return $this;
+    }
+
+    /**
+     * Get ancienReleve
+     *
+     * @return string
+     */
+    public function getAncienReleve()
+    {
+        return $this->ancienReleve;
+    }
+
+    /**
+     * Set dateDernierReleve
+     *
+     * @param \DateTime $dateDernierReleve
+     *
+     * @return client
+     */
+    public function setDateDernierReleve($dateDernierReleve)
+    {
+        $this->dateDernierReleve = $dateDernierReleve;
+
+        return $this;
+    }
+
+    /**
+     * Get dateDernierReleve
+     *
+     * @return \DateTime
+     */
+    public function getDateDernierReleve()
+    {
+        return $this->dateDernierReleve;
+    }
+
+    /**
+     * Set dernierReleve
+     *
+     * @param string $dernierReleve
+     *
+     * @return client
+     */
+    public function setDernierReleve($dernierReleve)
+    {
+        $this->dernierReleve = $dernierReleve;
+
+        return $this;
+    }
+
+    /**
+     * Get dernierReleve
+     *
+     * @return string
+     */
+    public function getDernierReleve()
+    {
+        return $this->dernierReleve;
+    }
+
+    /**
+     * Set dateAncienReleve
+     *
+     * @param \DateTime $dateAncienReleve
+     *
+     * @return client
+     */
+    public function setDateAncienReleve($dateAncienReleve)
+    {
+        $this->dateAncienReleve = $dateAncienReleve;
+
+        return $this;
+    }
+
+    /**
+     * Get dateAncienReleve
+     *
+     * @return \DateTime
+     */
+    public function getDateAncienReleve()
+    {
+        return $this->dateAncienReleve;
+    }
+
+    /**
+     * Set signatureBase64
+     *
+     * @param string $signatureBase64
+     *
+     * @return client
+     */
+    public function setSignatureBase64($signatureBase64)
+    {
+        $this->signatureBase64 = $signatureBase64;
+
+        return $this;
+    }
+
+    /**
+     * Get signatureBase64
+     *
+     * @return string
+     */
+    public function getSignatureBase64()
+    {
+        return $this->signatureBase64;
+    }
+
+    /**
+     * Set situation
+     *
+     * @param integer $situation
+     *
+     * @return client
+     */
+    public function setSituation($situation)
+    {
+        $this->situation = $situation;
+
+        return $this;
+    }
+
+    /**
+     * Get situation
+     *
+     * @return int
+     */
+    public function getSituation()
+    {
+        return $this->situation;
+    }
+}
