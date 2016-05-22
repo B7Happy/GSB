@@ -6,12 +6,12 @@
 
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-
+          <link href="{{ asset('css/foot.css') }}" rel="stylesheet">
         {% block stylesheets %}{% endblock %}
 
     </head>
     <body>
-
+<div class="wrap">
      <header class="navbar navbar-static-top bs-docs-nav" id=top role=banner>
        <div class=container>
          <div class=navbar-header>
@@ -31,16 +31,17 @@
 
                   </ul>
                   <ul class="nav navbar-nav navbar-right"> <li>
+                    {% set var = '' %}
                     <li> <a href="{{path('panier') }}"> <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Dans le panier  </a> </li>
 
+                    {% if var == 'active' %}
 
-                  <li> <a href="{{path('deco') }}"> <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Deco</a>  </li>
+                  {% else %}
+
+                    <li> <a href="{{path('homelogin') }}"> <span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Espace personnel</a>  </li>
 
 
-                    <li> <a href="{{path('homelogin') }}"> <span class="glyphicon glyphicon-lock" aria-hidden="true"></span> Login</a>  </li>
-                    <li> <a href="{{path('signup') }}"> <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Insription </a> </li>
-
-                
+                {% endif%}
                   </ul>
                 </nav>
 </div>
@@ -50,9 +51,44 @@
 
 
   {% block body %}{% endblock %}
+</div>
 
+
+<footer class="footer-distributed">
+
+{# <div class="footer-right">
+
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
+      <a href="#"><i class="fa fa-github"></i></a>
+
+    </div> #}
+
+    <div class="footer-left">
+
+    {#  <p class="footer-links">
+        <a href="#">Home</a>
+        ·
+        <a href="#">Blog</a>
+        ·
+        <a href="#">Pricing</a>
+        ·
+        <a href="#">About</a>
+        ·
+        <a href="#">Faq</a>
+        ·
+        <a href="#">Contact</a>
+      </p>
+ #}
+      <p>Bhappy  &copy; 2016   - <a href="{{path('adminlogin') }}"> Admin </a></p>
+    </div>
+
+  </footer>
 
 </div>
+
+
 
 
 

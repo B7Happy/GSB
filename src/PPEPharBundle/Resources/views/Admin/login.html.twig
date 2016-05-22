@@ -1,0 +1,49 @@
+
+{% extends "::base0.html.twig"%}
+
+{% block stylesheets %}
+
+
+
+  <link href="{{ asset('css/signin.css') }}" rel="stylesheet">
+
+  {% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+{% for flash_message in app.session.flashbag.get('notice') %}
+      <div class="alert alert-success">
+      <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+      {{flash_message}}
+      </div>
+      {% endfor %}
+
+      {% for flash_message in app.session.flashbag.get('error') %}
+            <div class="alert alert-danger">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            {{flash_message}}
+            </div>
+            {% endfor %}
+
+<form class="form-signin" method ="POST" action"{{path('homelogin')}}>
+  <h2 class="form-signin-heading">Administrateur</h2>
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <input type="text"  name="iden" class="form-control" placeholder="address mail " required autofocus>
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password"  name="mp" class="form-control" placeholder="Mot de passe" required>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" name="remember" value="remember-me" > Garder ma session active
+
+    </label>
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit"> Connexion </button>
+
+</form>
+
+</div>
+
+
+{% endblock %}

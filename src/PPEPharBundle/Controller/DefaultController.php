@@ -21,7 +21,7 @@ class DefaultController extends Controller
 
 
         return $this->render('PPEPharBundle:Default:index.html.twig',array(
-          'login' => $login
+          'var' => "active"
         ));
     }
 }

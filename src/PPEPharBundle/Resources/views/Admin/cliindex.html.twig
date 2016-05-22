@@ -1,0 +1,43 @@
+{% extends "::base2.html.twig"%}
+
+{% block body %}
+
+
+<h2 class="page-header"> Les Client </h2>
+<table class="table table-hover">
+<thead>
+   <tr>
+       <th>Prenom </th>
+       <th>Nom</th>
+       <th>Num telephone</th>
+          <th>Adresse</th>
+             <th>Ville</th>
+
+
+   </tr>
+</thead>
+<tdody>
+{% if Client|length == 0 %}
+    <tr>
+        <td> <centre> Aucune facture actuellement. </centre>   </td>
+    </tr>
+{% endif %}
+{% for Client in Client %}
+   <tr>
+
+       <td scope="row">{{ Client.prenom}}</td>
+       <td>{{ Client.nom}}</td>
+       <td>{{ Client.telephone}}</td>
+       <td>{{ Client.adresse}}</td>
+       <td>{{ Client.ville}}</td>
+
+
+
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+
+
+{% endblock %}

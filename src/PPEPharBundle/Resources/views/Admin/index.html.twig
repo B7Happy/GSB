@@ -1,0 +1,41 @@
+{% extends "::base2.html.twig"%}
+
+{% block body %}
+
+
+<h2 class="page-header"> Les Medicaments </h2>
+<table class="table table-hover">
+<thead>
+   <tr>
+       <th>Type </th>
+       <th>Nom</th>
+       <th>Effet</th>
+       <th>precaution</th>
+       <th>Prix</th>
+       <th> </th>
+   </tr>
+</thead>
+<tdody>
+{% for Medicament in Medicament %}
+   <tr>
+
+       <td scope="row">{{ Medicament.Type}}</td>
+       <td>{{ Medicament.Nom}}</td>
+       <td>{{ Medicament.effet}}</td>
+       <td>{{ Medicament.precaution}}</td>
+       <td>{{ Medicament.prix}}</td>
+
+   <td>
+
+<a href="/Symfony/web/app_dev.php/admin/edit/{{Medicament.id}}"  class="btn btn-default"> Edit </a>
+<a href="/Symfony/web/app_dev.php/admin/delete/{{Medicament.id}}"  class="btn btn-danger"> Delete </a>
+
+</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+
+
+{% endblock %}

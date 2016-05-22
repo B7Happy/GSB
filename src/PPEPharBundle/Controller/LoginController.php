@@ -70,6 +70,7 @@ class LoginController extends Controller
 
       if ($client){
         return $this->render ('PPEPharBundle:Compte:index.html.twig', array ('nom' => $client->getNom(), 'prenom' => $client->getPrenom()));
+        return $this->render ('PPEPharBundle:Default:index.html.twig', array ('var' => 'active'));
       }
 
     }

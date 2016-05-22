@@ -100,25 +100,66 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/compte')) {
-            // compteh
-            if ($pathinfo === '/compte') {
-                return array (  '_controller' => 'PPEPharBundle\\Controller\\CompteController::indexAction',  '_route' => 'compteh',);
+        if (0 === strpos($pathinfo, '/admin')) {
+            // adminhome
+            if ($pathinfo === '/admin') {
+                return array (  '_controller' => 'PPEPharBundle\\Controller\\AdminController::indexAction',  '_route' => 'adminhome',);
             }
 
-            // cperso
-            if ($pathinfo === '/compte/perso') {
-                return array (  '_controller' => 'PPEPharBundle\\Controller\\CompteController::perosAction',  '_route' => 'cperso',);
+            // cc
+            if ($pathinfo === '/admin/create') {
+                return array (  '_controller' => 'PPEPharBundle\\Controller\\AdminController::createAction',  '_route' => 'cc',);
             }
 
-            // cmp
-            if ($pathinfo === '/compte/mp') {
-                return array (  '_controller' => 'PPEPharBundle\\Controller\\CompteController::mpAction',  '_route' => 'cmp',);
+            // ppephar_admin_edit
+            if (0 === strpos($pathinfo, '/admin/edit') && preg_match('#^/admin/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ppephar_admin_edit')), array (  '_controller' => 'PPEPharBundle\\Controller\\AdminController::editAction',));
             }
 
-            // ppephar_compte_order
-            if ($pathinfo === '/compte') {
-                return array (  '_controller' => 'PPEPharBundle\\Controller\\CompteController::orderAction',  '_route' => 'ppephar_compte_order',);
+            // ppephar_admin_delete
+            if (0 === strpos($pathinfo, '/admin/delete') && preg_match('#^/admin/delete/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ppephar_admin_delete')), array (  '_controller' => 'PPEPharBundle\\Controller\\AdminController::deleteAction',));
+            }
+
+            // chome
+            if ($pathinfo === '/admin/client') {
+                return array (  '_controller' => 'PPEPharBundle\\Controller\\AdminController::cliindexAction',  '_route' => 'chome',);
+            }
+
+            // adminlogin
+            if ($pathinfo === '/admin/login') {
+                return array (  '_controller' => 'PPEPharBundle\\Controller\\AdminController::loginAction',  '_route' => 'adminlogin',);
+            }
+
+        }
+
+        if (0 === strpos($pathinfo, '/co')) {
+            // commandee
+            if ($pathinfo === '/coom') {
+                return array (  '_controller' => 'PPEPharBundle\\Controller\\CommandeController::indexAction',  '_route' => 'commandee',);
+            }
+
+            if (0 === strpos($pathinfo, '/compte')) {
+                // compteh
+                if ($pathinfo === '/compte') {
+                    return array (  '_controller' => 'PPEPharBundle\\Controller\\CompteController::indexAction',  '_route' => 'compteh',);
+                }
+
+                // cperso
+                if ($pathinfo === '/compte/perso') {
+                    return array (  '_controller' => 'PPEPharBundle\\Controller\\CompteController::perosAction',  '_route' => 'cperso',);
+                }
+
+                // cmp
+                if ($pathinfo === '/compte/mp') {
+                    return array (  '_controller' => 'PPEPharBundle\\Controller\\CompteController::mpAction',  '_route' => 'cmp',);
+                }
+
+                // ppephar_compte_order
+                if ($pathinfo === '/compte') {
+                    return array (  '_controller' => 'PPEPharBundle\\Controller\\CompteController::orderAction',  '_route' => 'ppephar_compte_order',);
+                }
+
             }
 
         }
